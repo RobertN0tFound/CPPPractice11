@@ -7,9 +7,9 @@
 #define INPUT_3 "%d", cnt
 #define ERR_MSG "'\nЧисло не входит в диапазон допустимых значений (-50 - 50)"
 #define ERR_MSG_2 "\nERROR"
-#define pr(j) printf(j)
-#define in(e) scanf_s(e)
-#define CIRCLE for(i = 0; i < n; i++)
+#define pr printf
+#define in scanf_s
+#define CIRCLE for
 #define GO_BACK goto a1;
 #define CONDITION(n) if(n)
 
@@ -26,19 +26,17 @@ int main()
     {
         pr(ERR_MSG_2);
     }
-    CIRCLE
+    CIRCLE(i = 0; i < n; i++)
     {
-        a1:pr(OUTPUT_ELEMENT, i);
+        pr(OUTPUT_ELEMENT, i);
         in(INPUT_2);
         CONDITION(a[i] > 50)
         {
             pr(ERR_MSG);
-            GO_BACK;
         }
         CONDITION(a[i] < -50)
         {
             pr(ERR_MSG);
-            GO_BACK;
         }
         CONDITION(a[i] == a[i - 1])
         {
